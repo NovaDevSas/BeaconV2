@@ -1,0 +1,30 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-beacon"
+        version="1.0.0">
+    <name>BeaconPlugin</name>
+    <description>Cordova Plugin for Beacon functionality</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova, beacon</keywords>
+    <engines>
+        <engine name="cordova" version=">=9.0.0" />
+    </engines>
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.BLUETOOTH"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+        </config-file>
+        <source-file src="src/android/BeaconPlugin.java" target-dir="src/com/beaconapp/plugin" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+    </platform>
+    <platform name="ios">
+        <source-file src="src/ios/BeaconPlugin.m" />
+    </platform>
+    <js-module src="www/beaconplugin.js" name="BeaconPlugin">
+        <clobbers target="cordova.plugins.BeaconPlugin" />
+    </js-module>
+</plugin>

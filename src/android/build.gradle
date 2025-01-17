@@ -1,0 +1,8 @@
+repositories {
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    implementation 'org.altbeacon:android-beacon-library:2.20'
+}
