@@ -5,9 +5,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.altbeacon.beacon.*;
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.os.RemoteException;
+import android.util.Log;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import java.util.Collection;
 
 public class BeaconPlugin extends CordovaPlugin implements BeaconConsumer {
     private BeaconManager beaconManager;
